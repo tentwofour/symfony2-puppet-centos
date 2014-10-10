@@ -1,0 +1,11 @@
+$vhost = "thrivedesign"
+$ip = "192.168.10.42"
+
+$use_nfs = false
+
+$base_box = "cent_6_5_x86_64"
+
+$webserver = "apache"
+
+# Install NPM packages?
+$npm = true
