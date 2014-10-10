@@ -14,8 +14,8 @@ Vagrant provisioning with Puppet for Centos 6.5, with PHP5.4 (remi), Apache, MyS
 -   Get a CentOS 6.x base box with puppet support (like http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-puppet.box)
     see [vagrantup.com docs](http://vagrantup.com/v1/docs/getting-started/boxes.html)
 
--   Get a copy of this repository. You can do this either by integrating it as a git submodule or by just checking it out and copying the files. 
-    Preferably, the contents of this repository should be placed in a directory `vagrant` inside your project's root dir.
+-   Get a copy of this repository, ie.
+    git clone https://github.com/tentwofour/symfony2-puppet-centos.git vagrant
 
 -   Copy `vagrant/Personalization.dist` to `vagrant/Personalization` and modify `vagrant/Personalization` according to your needs.
 
