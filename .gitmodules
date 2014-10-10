@@ -1,32 +1,31 @@
-[submodule "apache"]
+[submodule "puppet/modules/apache"]
     path = puppet/modules/apache
     url = https://github.com/puppetlabs/puppetlabs-apache.git
 
-[submodule "composer"]
-    path = puppet/modules/composer
-    url = https://github.com/willdurand/puppet-composer.git
+[submodule "puppet/modules/composer"]
+	path = puppet/modules/composer
+	url = https://github.com/willdurand/puppet-composer.git
 
-[submodule "epel"]
-    path = puppet/modules/epel
-    url = https://github.com/stahnma/puppet-module-epel.git
+[submodule "puppet/modules/epel"]
+	path = puppet/modules/epel
+	url = https://github.com/stahnma/puppet-module-epel.git
 
-[submodule "mysql"]
-    path = puppet/modules/mysql
-    url = https://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "puppet/modules/mysql"]
+	path = puppet/modules/mysql
+	url = https://github.com/puppetlabs/puppetlabs-mysql.git
 
-[submodule "php"]
-    path = puppet/modules/php
-    url = https://github.com/thias/puppet-php.git
+[submodule "puppet/modules/php"]
+	path = puppet/modules/php
+	url = https://github.com/thias/puppet-php.git
 
-[submodule "remi"]
-    path = puppet/modules/remi
-    url = https://github.com/ckhall/puppet-module-remi.git
+[submodule "puppet/modules/remi"]
+	path = puppet/modules/remi
+	url = https://github.com/ckhall/puppet-module-remi.git
 
-[submodule "stdlib"]
-    path = puppet/modules/stdlib
-    url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "puppet/modules/stdlib"]
+	path = puppet/modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
 
-[submodule "wget"]
-    path = puppet/modules/wget
-    url = https://github.com/maestrodev/puppet-wget.git
-
+[submodule "puppet/modules/wget"]
+	path = puppet/modules/wget
+	url = https://github.com/maestrodev/puppet-wget.git
