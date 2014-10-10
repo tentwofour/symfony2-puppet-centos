@@ -6,6 +6,10 @@
 	path = puppet/modules/composer
 	url = https://github.com/willdurand/puppet-composer.git
 
+[submodule "puppet/modules/concat"]
+	path = puppet/modules/concat
+	url = https://github.com/puppetlabs/puppetlabs-concat.git
+
 [submodule "puppet/modules/epel"]
 	path = puppet/modules/epel
 	url = https://github.com/stahnma/puppet-module-epel.git
