@@ -9,9 +9,9 @@ class app::symfony2::init {
     include composer
 
     exec { "composer-install" :
-        command     => "/bin/bash -c 'cd /srv/www/vhosts/$vhost.dev && /usr/local/bin/composer install'",
+        command     => "/bin/bash -c 'cd /srv/www/vhosts/$vhost && /usr/local/bin/composer install'",
         environment => ["COMPOSER_HOME=/home/vagrant"],
-        creates     => "/srv/www/vhosts/$vhost.dev/vendor/symfony",
+        creates     => "/srv/www/vhosts/$vhost/vendor/symfony",
         require     => [ Package["php-cli"], Package["git"] ],
         timeout     => 0,
         tries       => 10,
@@ -31,26 +31,26 @@ class app::symfony2::init {
     # Redundant, if there are composer scripts running
     exec {"clear-symfony-cache":
         require => [Exec["set-cache-and-log-permissions"], Package["php-cli"]],
-        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost.dev && /usr/bin/php app/console cache:clear --env=dev && /usr/bin/php app/console cache:clear --env=prod'",
+        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost && /usr/bin/php app/console cache:clear --env=dev && /usr/bin/php app/console cache:clear --env=prod'",
     }
 
     # Drop database
     exec {"db-drop":
         require => Package["php-cli"],
-        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost.dev && /usr/bin/php app/console doctrine:schema:drop --force'",
+        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost && /usr/bin/php app/console doctrine:schema:drop --force'",
     }
 
     # Create database
     exec {"db-setup":
         require => [Exec["db-drop"], Package["php-cli"]],
-        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost.dev && /usr/bin/php app/console doctrine:schema:create'",
+        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost && /usr/bin/php app/console doctrine:schema:create'",
     }
 
     # Load fixtures
     exec {"db-default-data":
         require => [Exec["db-setup"], Package["php-cli"]],
-        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost.dev && /usr/bin/php app/console doctrine:fixtures:load -n'",
-        onlyif => "/usr/bin/test -n \"$(find /srv/www/vhosts/$vhost.dev/src -type d -name DataFixtures -print -quit)\"",
+        command => "/bin/bash -c 'cd /srv/www/vhosts/$vhost && /usr/bin/php app/console doctrine:fixtures:load -n'",
+        onlyif => "/usr/bin/test -n \"$(find /srv/www/vhosts/$vhost/src -type d -name DataFixtures -print -quit)\"",
     }
 
 

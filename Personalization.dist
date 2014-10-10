@@ -1,6 +1,6 @@
 # Virtual host
 # Sets: hostname, apache VirtualHost servername, and Apache docroot at /srv/www/vhosts/$vhost
-$vhost = "myproject.dev"
+$vhost = "myproject"
 
 # IP Address
 $ip = "192.168.10.40"
