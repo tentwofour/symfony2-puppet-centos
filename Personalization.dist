@@ -1,11 +1,16 @@
-$vhost = "thrivedesign"
-$ip = "192.168.10.42"
+# Virtual host
+# Sets: hostname, apache VirtualHost servername, and Apache docroot at /srv/www/vhosts/$vhost
+$vhost = "myproject.dev"
 
+# IP Address
+$ip = "192.168.10.40"
+
+# Use NFS
 $use_nfs = false
 
+# Base box
 $base_box = "cent_6_5_x86_64"
 
-$webserver = "apache"
-
-# Install NPM packages?
+# Install NPM packages for project?
+# This relies on packages.json found at /vagrant/app/Resources
 $npm = true
